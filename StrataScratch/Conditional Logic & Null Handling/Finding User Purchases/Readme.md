@@ -1,6 +1,6 @@
-# 🛒 StrataScratch - Finding User Purchases
+# StrataScratch - Finding User Purchases
 
-### 📌 Problem Info
+###  Problem Info
 * **Platform:** [StrataScratch](https://platform.stratascratch.com/coding/10322-finding-user-purchases)
 * **Problem ID:** `10322`
 * **Difficulty:** `Medium`
@@ -9,14 +9,14 @@
 
 ---
 
-## 📝 Problem Description
+##  Problem Description
 Identify returning active users by finding users who made a second purchase within **1 to 7 days** after their first purchase. 
 * *Note:* Ignore same-day purchases (where the difference between purchase dates is 0).
 * *Output:* A list of unique `user_id`s.
 
 ---
 
-## 🗂️ Database Schema
+##  Database Schema
 ### `amazon_transactions`
 | Column Name | Data Type | Description |
 | :--- | :--- | :--- |
@@ -28,7 +28,7 @@ Identify returning active users by finding users who made a second purchase with
 
 ---
 
-## 💡 Solution Approach
+##  Solution Approach
 To solve this problem efficiently:
 1. **Identify the first purchase date** for each user using a Common Table Expression (CTE) with the `MIN(created_at)` function.
 2. **Join the original table** with the CTE on `user_id` to compare subsequent purchases with their first purchase.
@@ -37,7 +37,7 @@ To solve this problem efficiently:
 
 ---
 
-## 💻 SQL Query
+##  SQL Query
 
 ```sql
 WITH first_purchases AS (
